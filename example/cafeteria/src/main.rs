@@ -31,6 +31,7 @@ fn cafeteria_worker(name: &str, orders: Receiver<&str>, lunches: Sender<Lunch>) 
 fn main() {
     let (orders_tx, orders_rx) = channel::unbounded();
     let orders_rx2 = orders_rx.clone();
+    
     let (lunches_tx, lunches_rx) = channel::unbounded();
     let lunches_tx2 = lunches_tx.clone();
 
